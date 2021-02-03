@@ -17,11 +17,16 @@ const business = {
 }
 const businesses = [business,business,business,business,business,business]
 class App extends component {
+    
+    searchYelp(term, location, sortBy) {
+        alert(`searching yelp for ${term} as business, ${location} as location while sorted as ${sortBy}`)
+    }
+    
     render() {
         return (
             <div className="App">
               <h1>ravenous</h1>
-              <SearchBar />
+              <SearchBar searchYelp={this.searchYelp}/>
               <BusinessList businesses={businesses}/> 
             </div>
           );
